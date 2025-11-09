@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎄 Gran Pre-Venta de Casitas Navideñas 🎁</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    /* --- RESET --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html,body { height: 100%; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: radial-gradient(circle at top, #fff8f8, #fef3f3 60%, #ffeaea);
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* --- CANVAS (puntitos flotantes) --- */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* --- NIEVE (iconos ❄️) contenedor --- */
+    #snow-icons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      /* por encima del canvas pero detrás del contenido */
+      overflow: visible;
+    }
+
+    .snowflake-icon {
+      position: absolute;
+      top: -50px;
+      color: #ffffff;
+      user-select: none;
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+
+    /* animación genérica (se ajusta con JS mediante inline styles para aleatoriedad) */
+    @keyframes fall {
+      0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(110vh) translateX(40px) rotate(360deg); opacity: 0.9; }
+    }
+
+    /* --- POPUP --- */
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.4s ease;
+    }
+    #popup-title {
+      color: #fff;  
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.7),
+      0 0 16px rgba(255, 0, 0, 0.6);
+    }
+
+
+    .popup-content {
+      background: #d72638; /* rojo */
+      color: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      text-align: center;
+      max-width: 420px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      position: relative;
+      animation: slideUp 0.45s ease;
+    }
+
+    .popup-content h2 { margin-bottom: 10px; font-weight: 800; font-size: 1.35rem; }
+    .popup-content p { font-size: 1.02rem; color: #fff; margin-bottom: 12px; }
+
+    .close-btn {
+      position: absolute; top: 12px; right: 12px;
+      background: none; border: none; font-size: 1.25rem; cursor: pointer; color: #fff;
+    }
+
+    #popup-countdown {
+      background: #fff;
+      color: #d72638;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 6px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    }
+
+    /* --- HEADER / HERO --- */
+    header { position: relative; z-index: 0; }
+
+    #hero {
+      background: linear-gradient(135deg, #ff3e1c, #ff416c);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Contenedor que coloca el logo sobre el título */
+    #hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Logo pequeño encima del título */
+    #logo-small {
+      width: 150px;     /* tamaño pequeño, ajustable */
+      height: auto;
+      border-radius: 8px;
+      transform-origin: center;
+      animation: logoIn 0.7s ease;
+    }
+
+    @keyframes logoIn {
+      from { transform: translateY(-10px) scale(0.95); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    #hero h1 {
+      font-size: 1.9rem; /* más pequeño porque el logo está arriba */
+      font-weight: 800;
+      margin: 0;
+      line-height: 1.1;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    #hero p {
+      font-size: 1.05rem;
+      margin-top: 6px;
+      color: rgba(255,255,255,0.95);
+    }
+
+
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .hero-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 26px;
+      flex-wrap: wrap;
+    }
+
+    .hero-images img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.28s ease;
+    }
+
+    .hero-images img:hover { transform: scale(1.04); }
+
+    /* --- NUEVO: logo fijo (no toca otros estilos) --- */
+    #fixed-logo {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      width: 72px;
+      height: auto;
+      z-index: 2000;
+      border-radius: 12px;
+      padding: 6px;
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transition: transform 0.25s ease;
+      animation: logoFloat 3s ease-in-out infinite alternate;
+    }
+    #fixed-logo:hover { transform: scale(1.05) rotate(-4deg); }
+    @keyframes logoFloat { from { transform: translateY(0); } to { transform: translateY(6px); } }
+
+    /* --- NUEVO: BOTÓN WHATSAPP NAVIDEÑO (debajo de las imágenes) --- */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #fff;
+      font-weight: 800;
+      padding: 14px 30px;
+      border-radius: 36px;
+      text-decoration: none;
+      font-size: 1.03rem;
+      margin-top: 26px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+    }
+
+    /* --- SECCIONES (mantener estructura original) --- */
+    section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; z-index: 20; position: relative; }
+    h2 { text-align: center; font-size: 1.8rem; margin-bottom: 26px; font-weight:800; color:#d72638; }
+
+    /* Productos */
+    #product { background: #fff; border-radius: 10px; padding-top: 40px; padding-bottom: 40px; }
+    .product-list { display:flex; flex-wrap:wrap; justify-content:center; gap:22px; }
+    .product-item { background:#fff8f8; border-radius:12px; text-align:center; padding:16px; max-width:220px; transition:transform .22s, box-shadow .22s; box-shadow:0 6px 14px rgba(0,0,0,0.08); }
+    .product-item:hover { transform: translateY(-6px); box-shadow:0 14px 28px rgba(0,0,0,0.12); }
+    .product-item img { width:100%; border-radius:8px; margin-bottom:8px; }
+
+/* Pasos */
+
+#how-it-works {
+  background: #fff;
+  border-radius: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+}
+
+.step {
+  background: #fff8f8;
+  border-radius: 12px;
+  text-align: center;
+  padding: 16px;
+  max-width: 300px;
+  min-height: 340px; /* puedes ajustar este valor */
+  transition: transform .22s, box-shadow .22s;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+
+  /* 🔹 Centramos contenido verticalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+.step img {
+  display: block;              /* Evita espacios vacíos debajo */
+  margin: 0 auto 12px auto;    /* Centra horizontalmente */
+  width: 80%;                  /* Un poco más pequeña, centrada */
+  border-radius: 8px;
+  border: 2px solid #ffdede; 
+  box-shadow: 0 0 10px rgba(208, 0, 0, 0.3);
+}
+
+
+
+
+    /* FAQ */
+    #faq { background:#fff8f0; border-radius:10px; padding-top:40px; padding-bottom:40px; }
+    .accordion { max-width:700px; margin:0 auto; }
+    .accordion-item { background:#fff; border-radius:10px; margin-bottom:12px; box-shadow:0 6px 20px rgba(0,0,0,0.06); overflow:hidden; }
+    .accordion-header { background:#ffd700; padding:14px; cursor:pointer; font-weight:700; }
+    .accordion-content { display:none; padding:12px 14px; color:#444; }
+
+    /* Footer */
+    footer { background:#333; color:#fff; text-align:center; padding:20px; z-index:20; position:relative; }
+    .social-links a { color:#ffd700; text-decoration:none; margin:0 10px; font-weight:600; }
+
+    /* --- ANIMACIONES UTILES --- */
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideUp { from{transform:translateY(24px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      #hero { padding: 48px 18px; }
+      #hero h1 { font-size: 1.5rem; }
+      #logo-small { width: 60px; }
+      .hero-images img { width: 160px; }
+      section { padding: 36px 16px; }
+      #fixed-logo { width: 56px; left: 10px; top: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CANVAS para puntitos flotantes -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Contenedor para copos (iconos unicode) -->
+  <div id="snow-icons" aria-hidden="true"></div>
+
+  <!-- POPUP -->
+  <div id="popup" role="dialog" aria-labelledby="popup-title" aria-modal="true">
+    <div class="popup-content">
+      <button class="close-btn" aria-label="Cerrar popup" onclick="closePopup()">✖</button>
+      <h2 id="popup-title">🎅 ¡Gran Pre-Venta Navideña! 🎁</h2>
+      <p>Obtén tu kit de casitas de galleta antes del <b>20 de noviembre</b> y crea momentos mágicos con tu familia.</p>
+      <div id="popup-countdown" aria-live="polite">Cargando...</div>
+    </div>
+  </div>
+
+  <!-- HEADER / HERO -->
+  <header>
+    <section id="hero" aria-label="Sección principal">
+      <div id="hero-inner">
+        <!-- Logo encima del título (pequeño) -->
+        <img id="logo-small" src="img\logo.png" alt="Logo Casitas de Navidad" />
+        <h1>Gran Pre-Venta de Casitas Navideñas 🎄</h1>
+        <p>Arma, decora y disfruta una dulce Navidad en familia.</p>
+
+        <div class="hero-images" aria-hidden="false">
+          <img src="img\im1.jpg" alt="Casita navideña">
+          <img src="img\im2.jpg" alt="Decoración de galletas">
+        </div>
+
+        <!-- NUEVO: BOTÓN WHATSAPP DEBAJO DE LAS IMÁGENES -->
+        <a class="whatsapp-btn" href="https://wa.me/51912341859?text=¡Quiero%20mi%20casita%20navideña!%20" target="_blank" rel="noopener noreferrer">
+          🎄 <span>¡Quiero mi casita navideña!</span>
+        </a>
+
+      </div>
+    </section>
+  </header>
+
+  <!-- PRODUCTOS -->
+  <section id="product" aria-label="Productos">
+    <h2>🎁 ¿Qué incluye tu pack navideño?</h2>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="img\Galletas.webp" alt="Piezas de galleta">
+        <p>Piezas listas para armar tu casita</p>
+      </div>
+      <div class="product-item">
+        <img src="img\Glass.webp" alt="Bolsas de glaseado">
+        <p>Glaseado blanco y de colores</p>
+      </div>
+      <div class="product-item">
+        <img src="img\Toppings.webp" alt="Decoraciones">
+        <p>Toppings decorativos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASOS -->
+  <section id="how-it-works" aria-label="Cómo funciona">
+    <h2>✨ Vive la experiencia navideña</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="img\Arma.jpeg" alt="Arma tu casita">
+        <h3>1. Arma tu casita</h3>
+        <p>Une las piezas con glaseado y crea la base.</p>
+      </div>
+      <div class="step">
+        <img src="img\Decora.jpeg" alt="Decora en familia">
+        <h3>2. Decora con tu familia</h3>
+        <p>Agrega caramelos y decoraciones coloridas.</p>
+      </div>
+      <div class="step">
+        <img src="img\Post.png" alt="Comparte momentos">
+        <h3>3. Comparte momentos dulces</h3>
+        <p>Disfruta, toma fotos y vive la magia de la Navidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="Preguntas frecuentes">
+    <h2>❓ Preguntas frecuentes</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">¿Hasta cuándo dura la pre-venta?</div>
+        <div class="accordion-content">Hasta el 20 de noviembre. ¡No te quedes sin tu casita!</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">¿Cómo hago mi pedido?</div>
+        <div class="accordion-content">Haz clic en “Comprar ahora” para contactarnos por WhatsApp.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">¿Puedo personalizar mi casita?</div>
+        <div class="accordion-content">¡Claro! Puedes agregar decoraciones o colores a tu gusto.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-links">
+      <a href="https://wa.me/51912341859" target="_blank">WhatsApp</a> |
+      <a href="https://www.instagram.com/hansel.gretel7/" target="_blank">Instagram</a>
+
+    </div>
+    <p>© 2025 Casitas de Navidad – Hecho con ❤️ y espíritu navideño</p>
+  </footer>
+
+  <script>
+    /* ---------------------------
+       Helpers: Selecciones
+       --------------------------- */
+    const popup = document.getElementById('popup');
+    const popupCountdown = document.getElementById('popup-countdown');
+
+    /* ---------------------------
+       POPUP: cerrar
+       --------------------------- */
+    function closePopup() {
+      popup.style.display = 'none';
+    }
+
+    /* ---------------------------
+       Countdown dentro del popup
+       --------------------------- */
+    (function startCountdown() {
+      const targetDate = new Date('2025-11-20T23:59:59').getTime();
+      function update() {
+        const now = Date.now();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+          popupCountdown.textContent = "🎁 ¡La pre-venta ha finalizado!";
+          return;
+        }
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / (1000 * 60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+        popupCountdown.textContent = `⏰ ${d}d ${h}h ${m}m ${s}s`;
+      }
+      update();
+      setInterval(update, 1000);
+    })();
+
+    /* ---------------------------
+       Redirect WhatsApp
+       --------------------------- */
+    function redirectToWhatsApp() {
+      window.open('https://wa.me/519XXXXXXXX', '_blank');
+    }
+
+    /* ---------------------------
+       Accordion (FAQ)
+       --------------------------- */
+    function toggleAccordion(el) {
+      const content = el.nextElementSibling;
+      content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+
+    /* ---------------------------
+       Partículas (puntitos flotantes) en canvas
+       --------------------------- */
+    (function particles() {
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+      let particlesArray = [];
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+
+      // Config
+      const numParticles = Math.round((width * height) / 9000); // escala con pantalla
+      const maxR = 1.6;
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+        initParticles();
+      }
+      window.addEventListener('resize', resize);
+
+      function initParticles() {
+        particlesArray = [];
+        for (let i = 0; i < numParticles; i++) {
+          particlesArray.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            r: Math.random() * maxR + 0.3,
+            vx: (Math.random() - 0.5) * 0.25,
+            vy: (Math.random() - 0.5) * 0.25,
+            alpha: Math.random() * 0.6 + 0.15
+          });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        for (let p of particlesArray) {
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(255,255,255,' + p.alpha + ')';
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          // movimiento suave (oscilante)
+          p.x += p.vx + Math.sin(Date.now() / 1000 + p.x) * 0.02;
+          p.y += p.vy + Math.cos(Date.now() / 1200 + p.y) * 0.02;
+
+          // reingresar cuando salen
+          if (p.x < -10) p.x = width + 10;
+          if (p.x > width + 10) p.x = -10;
+          if (p.y < -10) p.y = height + 10;
+          if (p.y > height + 10) p.y = -10;
+        }
+        requestAnimationFrame(draw);
+      }
+
+      initParticles();
+      draw();
+    })();
+
+    /* ---------------------------
+       NIEVE con iconos ❄️ generada dinámicamente
+       cada copo tiene posición, tamaño, duración, delay y un leve sway aleatorio
+       --------------------------- */
+    (function snowIcons() {
+      const container = document.getElementById('snow-icons');
+      const count = 60; // ajusta cantidad de copos
+      const minSize = 12;
+      const maxSize = 34;
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement('div');
+        el.className = 'snowflake-icon';
+        el.textContent = '❄'; // icono básico
+        const size = Math.round(rand(minSize, maxSize));
+        el.style.fontSize = size + 'px';
+
+        // posicion horizontal inicial aleatoria
+        const left = rand(0, 100);
+        el.style.left = left + 'vw';
+
+        // duración y delay aleatorios para evitar sincronía
+        const duration = rand(6, 18); // segundos que tarda en caer
+        const delay = rand(0, 8); // delay inicial
+        const sway = rand(-40, 40); // px de desplazamiento horizontal total
+
+        // opacidad
+        el.style.opacity = rand(0.4, 0.95);
+
+        // transform origin para rotación natural
+        el.style.transformOrigin = 'center';
+
+        // aplicamos la animación fall con propiedades personalizadas
+        el.style.animationName = 'fall';
+        el.style.animationDuration = duration + 's';
+        el.style.animationTimingFunction = 'linear';
+        el.style.animationDelay = delay + 's';
+        el.style.animationIterationCount = 'infinite';
+
+        // guardamos parámetros para la animación JS:
+        el.dataset.sway = sway;
+        el.dataset.duration = duration;
+        el.dataset.delay = delay;
+        el.dataset.start = Date.now() + delay * 1000;
+        el.dataset.size = size;
+        container.appendChild(el);
+      }
+
+      // Animación manual para sway y posición X (mejor control que depender solo del keyframes)
+      const flakes = Array.from(container.children);
+
+      function updateFlakes() {
+        const now = Date.now();
+        for (let flake of flakes) {
+          const duration = parseFloat(flake.dataset.duration) * 1000;
+          const start = parseFloat(flake.dataset.start);
+          const progress = (now - start) / duration; // 0..1
+          // si aún no empezó (delay), no mover
+          if (progress < 0) {
+            // mantén arriba de la pantalla justo fuera de vista
+            flake.style.top = (-60 + (parseFloat(flake.dataset.size) * 0)) + 'px';
+            continue;
+          }
+          // ciclo (como infinite): calcular cicloProgress en 0..1
+          const cycle = (progress % 1);
+
+          // Y: mapea ciclo 0..1 -> -10vh .. 110vh
+          const topPercent = cycle * 120 - 10; // -10% .. 110%
+          flake.style.top = topPercent + 'vh';
+
+          // X sway: basado en seno para movimiento natural
+          const leftVw = parseFloat(flake.style.left) || 0;
+          const sway = parseFloat(flake.dataset.sway) || 20;
+          const swayOffsetPx = Math.sin((now / 1000) * 2 + leftVw) * (sway / 2);
+          // Apply translateX in px
+          flake.style.transform = 'translateX(' + swayOffsetPx + 'px) rotate(' + (cycle * 360) + 'deg)';
+
+          // Opacity pulso sutil
+          const baseOpacity = parseFloat(flake.style.opacity) || 0.8;
+          const pulse = 0.12 * Math.sin((cycle * Math.PI * 2) + leftVw);
+          flake.style.opacity = Math.max(0.25, Math.min(1, baseOpacity + pulse));
+        }
+        requestAnimationFrame(updateFlakes);
+      }
+      updateFlakes();
+    })();
+
+    /* ---------------------------
+       Opcional: Mostrar el popup solo un tiempo y luego pueda cerrarse o auto-cerrar
+       (se mantiene abierto por defecto; si quieres auto-close, descomenta)
+       --------------------------- */
+    // setTimeout(() => { popup.style.display = 'none'; }, 15000); // auto-cerrar en 15s (opcional)
+
+    /* ---------------------------
+       Accesibilidad: cerrar popup con ESC
+       --------------------------- */
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        popup.style.display = 'none';
+      }
+    });
+
+  </script>
+</body>
+</html>
+
+
+
+
+
