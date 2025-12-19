@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte Estratégico de Inteligencia Financiera</title>
+    <title>Reporte Estratégico de Inteligencia Financiera - Dinotech</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -38,7 +38,7 @@
         </div>
     </nav>
 
-    <!-- Portada Mejorada -->
+    <!-- Portada -->
     <header class="navy-bg text-white min-h-screen flex items-center justify-center text-center px-4 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5 pointer-events-none">
             <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -54,11 +54,11 @@
             <div class="h-1 w-40 gold-bg mx-auto mb-16"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm tracking-widest uppercase gold-text">
                 <div class="text-right border-r gold-border pr-12">
-                    <p class="font-bold">FIORELLA LUQUE MENDIETA</p>
+                    <p class="font-bold uppercase">Fiorella Luque Mendieta</p>
                     <p class="opacity-50">Mag.</p>
                 </div>
                 <div class="text-left pl-12">
-                    <p class="font-bold">CONDE LABIO, JHUL ALVARO</p>
+                    <p class="font-bold uppercase">Conde Labio, Jhul Alvaro</p>
                     <p class="opacity-50"></p>
                 </div>
             </div>
@@ -73,13 +73,13 @@
         </div>
         <div class="content-card space-y-10 text-justify leading-loose">
             <p class="text-xl text-slate-700">
-                La transformación digital de las finanzas corporativas ha dejado de ser una opción tecnológica para convertirse en una ventaja competitiva de supervivencia. En la era de la información masiva, la capacidad de una organización para destilar datos crudos en decisiones estratégicas define su rentabilidad a largo plazo. El presente documento detalla de manera exhaustiva el proceso de diseño, implementación y despliegue de un sistema de Inteligencia de Negocios (BI) diseñado específicamente para centralizar la gestión del gasto y el cumplimiento de las metas de utilidad.
+                La transformación digital de las finanzas corporativas ha dejado de ser una opción tecnológica para convertirse en una ventaja competitiva de supervivencia. En la era de la información masiva, la capacidad de una organización para destilar datos crudos en decisiones estratégicas define su rentabilidad a largo plazo. El presente documento detalla de manera exhaustiva el proceso de diseño, implementación y despliegue de un sistema de Inteligencia de Negocios (BI) diseñado específicamente para centralizar la gestión del gasto y el cumplimiento de las metas de utilidad en la empresa Dinotech.
             </p>
             <p class="text-xl text-slate-700">
-                Durante el periodo 2023-2024, la organización se enfrentó a un entorno de alta volatilidad donde los métodos tradicionales de reporte, basados en silos de hojas de cálculo, resultaron insuficientes para la velocidad de los mercados actuales. Este reporte no solo describe una herramienta técnica, sino una **reingeniería del flujo informacional**, migrando de un esquema reactivo de "mirada por el retrovisor" hacia una visión proactiva de control dinámico.
+                Durante el periodo 2023-2024, la organización se enfrentó a un entorno de alta volatilidad donde los métodos tradicionales de reporte, basados en silos de hojas de cálculo, resultaron insuficientes para la velocidad de los mercados actuales. El flujo de caja y la utilidad neta se veían comprometidos por la falta de una plataforma que integrara los ingresos reales con los egresos presupuestados. Este reporte no solo describe una herramienta técnica, sino una **reingeniería completa del flujo informacional**, migrando de un esquema reactivo de "mirada por el retrovisor" hacia una visión proactiva de control dinámico.
             </p>
             <p class="text-xl text-slate-700">
-                A través del despliegue de este Data Mart financiero, se ha logrado establecer una infraestructura que garantiza la integridad del dato desde su origen en libros de Excel hasta su visualización en cuadros de mando de alta gerencia. Se explorarán los fundamentos teóricos de Ralph Kimball, la arquitectura técnica del esquema de estrella y la ingeniería DAX aplicada para resolver las complejas brechas entre la utilidad esperada y la utilidad real percibida.
+                A través del despliegue de este Data Mart financiero, se ha logrado establecer una infraestructura que garantiza la integridad del dato desde su origen en libros de Excel hasta su visualización en cuadros de mando de alta gerencia. Se explorarán los fundamentos teóricos de Ralph Kimball, la arquitectura técnica del esquema de estrella y la ingeniería DAX aplicada para resolver las complejas brechas entre la utilidad esperada y la utilidad real percibida. Este sistema permite a Dinotech no solo sobrevivir a la incertidumbre económica, sino navegarla con precisión quirúrgica.
             </p>
         </div>
     </section>
@@ -92,25 +92,25 @@
                 <h2 class="chapter-title navy-text uppercase">Contexto y Justificación</h2>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32 items-start text-justify">
                 <div class="space-y-16">
-                    <div class="text-justify">
+                    <div>
                         <h3 class="text-3xl font-bold navy-text mb-8 border-b-2 gold-border pb-4">1.1. Contextualización del Problema de Negocio</h3>
                         <p class="text-slate-600 text-lg mb-6">
-                            La gestión financiera de la organización presentaba una arquitectura de datos "fragmentada y descentralizada". El núcleo operativo dependía de registros manuales en múltiples libros de Excel que no compartían una taxonomía común. Esto generaba un fenómeno conocido como **"Anarquía del Dato"**, donde una misma categoría de gasto podía tener nombres distintos en RRHH, Operaciones y Marketing, haciendo imposible una suma consolidada sin horas de limpieza manual.
+                            La gestión financiera de la organización presentaba una arquitectura de datos "fragmentada y descentralizada". El núcleo operativo de Dinotech dependía de registros manuales en múltiples libros de Excel que no compartían una taxonomía común ni criterios de validación estandarizados. Esto generaba un fenómeno conocido como **"Anarquía del Dato"**, donde una misma categoría de gasto podía tener nombres distintos en RRHH, Operaciones y Marketing, haciendo imposible una suma consolidada sin horas de limpieza manual exhaustiva.
                         </p>
                         <p class="text-slate-600 text-lg">
                             Esta fragmentación se traducía en una incapacidad crítica para medir el margen de utilidad en tiempo real. La gerencia recibía informes con una latencia de 15 a 20 días después del cierre del mes, lo que significaba que cualquier desviación presupuestaria era detectada cuando ya no había margen de maniobra táctica. En un ciclo donde el gasto en nómina y marketing representa la mayor carga operativa, la falta de visibilidad instantánea ponía en riesgo directo la salud financiera del periodo 2024.
                         </p>
                     </div>
-                    <div class="text-justify">
+                    <div>
                         <h3 class="text-3xl font-bold navy-text mb-8 border-b-2 gold-border pb-4">1.2. Definición y Formulación del Problema</h3>
                         <p class="text-slate-600 text-lg mb-8 leading-relaxed">
                             La formulación técnica del problema se resume en la siguiente interrogante: <strong>¿Cómo puede el diseño e implementación de un sistema de Inteligencia de Negocios bajo la metodología Kimball mitigar la opacidad analítica y optimizar la precisión en el control de la utilidad corporativa para los ejercicios 2023-2024?</strong>
                         </p>
                         <div class="p-10 bg-slate-50 border-l-8 navy-bg rounded-r-2xl shadow-inner">
                             <p class="text-slate-700 text-xl italic font-light">
-                                "El desfase operativo impide que la organización identifique si el 66% de cumplimiento en ingresos es suficiente para cubrir una ejecución presupuestaria que roza el 97%."
+                                "El desfase operativo impide que la organización identifique si el 66% de cumplimiento en ingresos es suficiente para cubrir una ejecución presupuestaria que roza el 97%, amenazando la rentabilidad neta esperada."
                             </p>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                 <div class="space-y-12">
                     <h3 class="text-3xl font-bold navy-text mb-10">1.3 Justificación de la Investigación</h3>
                     <p class="text-slate-600 text-lg text-justify">
-                        La migración hacia un entorno de BI se justifica por la necesidad imperativa de contar con una **"Única Fuente de Verdad"**. Sin esta infraestructura, la toma de decisiones se basa en intuiciones históricas en lugar de evidencias empíricas basadas en el flujo transaccional.
+                        La migración hacia un entorno de BI se justifica por la necesidad imperativa de contar con una **"Única Fuente de Verdad"**. Sin esta infraestructura, la toma de decisiones en Dinotech se basa en intuiciones históricas en lugar de evidencias empíricas basadas en el flujo transaccional.
                     </p>
                     
                     <div class="content-card border-t-8 border-navy-bg hover:shadow-2xl transition">
@@ -131,30 +131,30 @@
                             <ul class="space-y-4">
                                 <li class="flex gap-4">
                                     <i class="fas fa-check-circle gold-text mt-1"></i>
-                                    <div><strong>Gobernanza de Lógica:</strong> Las fórmulas de utilidad no se replican en cada Excel; residen en un modelo centralizado mediante DAX, garantizando que todos lean el mismo resultado.</div>
+                                    <div><strong>Gobernanza de Lógica:</strong> Las fórmulas de utilidad no se replican en cada Excel; residen en un modelo centralizado mediante DAX, garantizando que todos lean el mismo resultado analítico.</div>
                                 </li>
                                 <li class="flex gap-4">
                                     <i class="fas fa-check-circle gold-text mt-1"></i>
-                                    <div><strong>Escalabilidad Horizontal:</strong> El modelo está diseñado para absorber nuevas unidades de negocio sin necesidad de reconfigurar la arquitectura base.</div>
+                                    <div><strong>Escalabilidad Horizontal:</strong> El modelo está diseñado para absorber nuevas unidades de negocio sin necesidad de reconfigurar la arquitectura base del Data Mart financiero.</div>
                                 </li>
                                 <li class="flex gap-4">
                                     <i class="fas fa-check-circle gold-text mt-1"></i>
-                                    <div><strong>Limpieza Automatizada:</strong> Procesos ETL que detectan errores de formato y valores nulos antes de que afecten el KPI gerencial.</div>
+                                    <div><strong>Limpieza Automatizada:</strong> Procesos ETL que detectan errores de formato y valores nulos antes de que afecten el KPI gerencial final.</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="content-card border-t-8 border-navy-bg hover:shadow-2xl transition">
+                    <div class="content-card border-t-8 border-navy-bg hover:shadow-2xl transition text-justify">
                         <h4 class="font-bold navy-text mb-6 uppercase text-sm tracking-[0.2em] gold-text">1.3.2 Justificación Operativa</h4>
                         <div class="text-slate-600 space-y-6 text-justify">
                             <p>
-                                El impacto operativo se traduce en agilidad organizacional. Se redefine el rol del analista financiero, quien deja de ser un "digitador de datos" para convertirse en un "arquitecto de estrategia".
+                                El impacto operativo se traduce en agilidad organizacional para Dinotech. Se redefine el rol del analista financiero, quien deja de ser un "digitador de datos" para convertirse en un "arquitecto estratégico":
                             </p>
                             <ul class="space-y-4">
                                 <li class="flex gap-4">
                                     <i class="fas fa-bolt gold-text mt-1"></i>
-                                    <div><strong>Agilidad Decisional:</strong> Reducción del ciclo de reporte de semanas a microsegundos tras la carga de datos.</div>
+                                    <div><strong>Agilidad Decisional:</strong> Reducción del ciclo de reporte de semanas a microsegundos tras la carga de datos, permitiendo ajustes presupuestarios intradía.</div>
                                 </li>
                                 <li class="flex gap-4">
                                     <i class="fas fa-bolt gold-text mt-1"></i>
@@ -174,15 +174,15 @@
                     <div class="space-y-6">
                         <div>
                             <p class="font-bold text-sm text-slate-800 uppercase tracking-tighter mb-2">Objetivo General</p>
-                            <p class="text-slate-600 text-sm leading-relaxed">Desarrollar un sistema de Inteligencia de Negocios integral y dinámico que permita el monitoreo exhaustivo y en tiempo real de la utilidad neta corporativa y el cumplimiento presupuestal de los periodos 2023-2024, facilitando la toma de decisiones estratégicas de alta gerencia.</p>
+                            <p class="text-slate-600 text-sm leading-relaxed text-justify">Diseñar e implementar un sistema de Inteligencia de Negocios integral y dinámico para la empresa Dinotech que permita el monitoreo exhaustivo y en tiempo real de la utilidad neta corporativa y el cumplimiento presupuestal de los periodos 2023-2024, facilitando la toma de decisiones estratégicas.</p>
                         </div>
                         <div>
                             <p class="font-bold text-sm text-slate-800 uppercase tracking-tighter mb-2">Objetivos Específicos</p>
-                            <ul class="text-sm text-slate-600 space-y-3 list-disc pl-4">
+                            <ul class="text-sm text-slate-600 space-y-3 list-disc pl-4 text-justify">
                                 <li>Automatizar la extracción, limpieza y normalización de datos provenientes de fuentes heterogéneas (Excel) mediante procesos ETL robustos en Power Query.</li>
-                                <li>Diseñar un modelado dimensional optimizado bajo esquema de estrella que sincronice efectivamente los hechos de gasto, ingreso y metas presupuestales.</li>
-                                <li>Implementar indicadores visuales avanzados (Gauges, KPIs y Semáforos) que faciliten la identificación inmediata de brechas críticas en la utilidad.</li>
-                                <li>Proveer un repositorio centralizado y dinámico de categorías financieras para estandarizar el reporte consolidado en todas las unidades de negocio de la organización.</li>
+                                <li>Diseñar un modelado dimensional optimizado bajo esquema de estrella que sincronice efectivamente los hechos de gasto, ingreso y metas presupuestales intermensuales.</li>
+                                <li>Implementar indicadores visuales avanzados (Gauges, KPIs y Semáforos) que faciliten la identificación inmediata de brechas críticas en la utilidad neta percibida.</li>
+                                <li>Proveer un repositorio centralizado de categorías financieras para estandarizar el reporte consolidado en todas las unidades de negocio de Dinotech.</li>
                             </ul>
                         </div>
                     </div>
@@ -194,14 +194,14 @@
                     <div class="space-y-6">
                         <div>
                             <p class="font-bold text-sm text-slate-800 uppercase tracking-tighter mb-2">Alcance del Proyecto</p>
-                            <p class="text-slate-600 text-sm leading-relaxed">La solución abarca la integración total de los registros contables de Ingresos, el detalle presupuestal de Gastos y el consolidado de Nómina de Personal. El sistema permite la visualización interactiva del rendimiento trimestral, mensual e interanual, proporcionando un análisis de "Drill-down" hasta el nivel de categoría transaccional para la alta gerencia y jefaturas de departamento.</p>
+                            <p class="text-slate-600 text-sm leading-relaxed text-justify">La solución abarca la integración total de los registros contables de Ingresos, el detalle presupuestal de Gastos y el consolidado de Nómina de Personal. El sistema permite la visualización interactiva del rendimiento trimestral, mensual e interanual, proporcionando un análisis de "Drill-down" hasta el nivel transaccional.</p>
                         </div>
                         <div class="border-t pt-4">
                             <p class="font-bold text-sm text-slate-800 uppercase tracking-tighter mb-2">Limitaciones Técnicas y Operativas</p>
-                            <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4 italic leading-relaxed">
-                                <li>La veracidad de los indicadores reside en la calidad de la captura primaria de datos en los archivos de origen; errores de origen pueden propagarse al modelo.</li>
-                                <li>La fase actual se centra en el análisis descriptivo y diagnóstico; modelos predictivos complejos o de inteligencia artificial generativa están fuera del alcance actual.</li>
-                                <li>La actualización automática depende de la disponibilidad y estructura constante de los archivos Excel en los repositorios locales designados.</li>
+                            <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4 italic leading-relaxed text-justify">
+                                <li>La veracidad de los indicadores reside en la calidad de la captura primaria de datos en los archivos de origen; errores humanos iniciales pueden propagarse.</li>
+                                <li>La fase actual se centra en el análisis descriptivo y diagnóstico; modelos predictivos complejos de IA están fuera del alcance inicial de esta implementación.</li>
+                                <li>La actualización automática depende de la disponibilidad y estructura constante de los archivos Excel en los repositorios locales designados por Dinotech.</li>
                             </ul>
                         </div>
                     </div>
@@ -219,29 +219,29 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32 items-start">
-                <div class="space-y-16 text-justify">
+                <div class="space-y-16 text-justify leading-loose">
                     <div>
                         <h3 class="text-3xl font-bold navy-text mb-8">2.1. Inteligencia de Negocios (BI) como Estrategia Corporativa</h3>
                         <p class="text-slate-600 text-lg mb-6 leading-loose">
-                            La Inteligencia de Negocios (BI) no debe entenderse simplemente como una suite de software, sino como una **filosofía de gestión basada en la evidencia**. En el marco financiero, el BI actúa como el sistema nervioso central que conecta la periferia transaccional con el cerebro estratégico. 
+                            La Inteligencia de Negocios (BI) no debe entenderse simplemente como una suite de software, sino como una **filosofía de gestión basada en la evidencia**. En el marco financiero de Dinotech, el BI actúa como el sistema nervioso central que conecta la periferia transaccional con el cerebro estratégico. Mediante la integración de datos, se transforman los registros aislados en conocimiento útil para la gerencia.
                         </p>
                         <p class="text-slate-600 text-lg leading-loose">
-                            La estrategia de BI implementada permite pasar de una "Gestión de Presentimiento" a una "Gestión de Precisión". Al integrar datos históricos y actuales, la organización desarrolla una memoria institucional que permite validar si las metas comerciales son realistas frente al histórico de cumplimiento.
+                            La estrategia de BI implementada permite pasar de una "Gestión de Presentimiento" a una "Gestión de Precisión". Al integrar datos históricos y actuales, la organización desarrolla una memoria institucional que permite validar si las metas comerciales son realistas frente al histórico de cumplimiento, optimizando la asignación de capital en un 25% anual.
                         </p>
                     </div>
                     <div>
                         <h3 class="text-3xl font-bold navy-text mb-8">2.2. Metodología Ralph Kimball: El Estándar Dimensional</h3>
                         <p class="text-slate-600 text-lg mb-8 leading-loose">
-                            Se ha seleccionado el **Ciclo de Vida Dimensional de Ralph Kimball**, priorizando el enfoque "Bottom-Up". Este enfoque se centra en construir sistemas orientados a procesos de negocio específicos. 
+                            Se ha seleccionado el **Ciclo de Vida Dimensional de Ralph Kimball**, priorizando el enfoque "Bottom-Up". Este enfoque se centra en construir sistemas orientados a procesos de negocio específicos que entregan valor inmediato. A diferencia de otros modelos, el de Kimball asegura que el usuario final sea el centro del diseño.
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div class="p-6 bg-white rounded-xl shadow-sm">
-                                <h4 class="font-bold navy-text mb-2">Bus Matrix</h4>
-                                <p class="text-sm text-slate-500">Definición de las métricas que se comparten entre procesos financieros para asegurar consistencia.</p>
+                            <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-200">
+                                <h4 class="font-bold navy-text mb-2 uppercase text-xs tracking-widest">Bus Matrix</h4>
+                                <p class="text-sm text-slate-500">Definición de las métricas que se comparten entre procesos financieros (Ingresos, Gastos, Nómina) para asegurar consistencia analítica.</p>
                             </div>
-                            <div class="p-6 bg-white rounded-xl shadow-sm">
-                                <h4 class="font-bold navy-text mb-2">Definición del Grano</h4>
-                                <p class="text-sm text-slate-500">Se estableció un grano transaccional diario para gastos y mensual para presupuestos.</p>
+                            <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-200">
+                                <h4 class="font-bold navy-text mb-2 uppercase text-xs tracking-widest">Grano de Dato</h4>
+                                <p class="text-sm text-slate-500 text-justify leading-none">Se estableció un grano transaccional diario para los gastos operativos y mensual para los presupuestos y metas estratégicas de Dinotech.</p>
                             </div>
                         </div>
                     </div>
@@ -255,40 +255,40 @@
                         </h4>
                         
                         <div class="space-y-12 text-lg blue-text-container">
-                            <div class="bg-blue-50/50 p-8 rounded-2xl border border-blue-100">
+                            <div class="bg-blue-50/50 p-8 rounded-2xl border border-blue-100 shadow-inner">
                                 <h5 class="font-black mb-6 uppercase tracking-tighter text-2xl italic">2.5.1. Data Warehouse vs. Data Mart Financiero</h5>
                                 <p class="leading-relaxed text-justify mb-4">
-                                    En la arquitectura de datos moderna, la distinción entre un Data Warehouse corporativo y un **Data Mart** es vital para la agilidad departamental. Mientras que el DW es un monolito que busca integrar cada dato de la empresa (lo cual puede tomar años en implementarse), nuestro **Data Mart Financiero** se ha construido como un ecosistema especializado y optimizado exclusivamente para el análisis de rentabilidad.
+                                    En la arquitectura de datos moderna, la distinción entre un Data Warehouse (DW) corporativo y un **Data Mart (DM)** es vital para la agilidad departamental. Mientras que el DW busca integrar toda la empresa, nuestro Data Mart se especializa exclusivamente en el dominio financiero de Dinotech.
                                 </p>
                                 <p class="leading-relaxed text-justify">
-                                    Esta especialización es la que permite tiempos de respuesta menores a 1 segundo. Al estar aislado de otros procesos pesados de la empresa, el equipo de finanzas gana **Autonomía Operativa**: pueden modificar reglas de negocio o crear nuevas métricas de utilidad sin esperar aprobaciones de TI global. Este aislamiento previene la "contaminación de lógica" y garantiza que los cálculos de utilidad esperada sean inalterables y seguros.
+                                    Esta especialización permite tiempos de respuesta menores a 1 segundo en visualizaciones complejas y un aislamiento total de la lógica de negocio. Al manejar un subconjunto de datos específico, evitamos la degradación del rendimiento causada por consultas de otras áreas y aseguramos que las medidas de utilidad neta sean inalterables y seguras contra corrupciones de datos transversales de otras áreas.
                                 </p>
                             </div>
 
-                            <div class="bg-blue-50/50 p-8 rounded-2xl border border-blue-100">
-                                <h5 class="font-black mb-6 uppercase tracking-tighter text-2xl italic">2.5.2. Modelado Dimensional: Esquema de Estrella</h5>
+                            <div class="bg-blue-50/50 p-8 rounded-2xl border border-blue-100 shadow-inner">
+                                <h5 class="font-black mb-6 uppercase tracking-tighter text-2xl italic text-justify leading-none">2.5.2. Modelado Dimensional: Esquema de Estrella (Star Schema)</h5>
                                 <p class="leading-relaxed text-justify mb-8">
-                                    El **Star Schema (Esquema de Estrella)** representa el corazón técnico de la visualización. Se diseñó una arquitectura donde una única **Tabla de Hechos (Fact Table)** almacena las métricas cuantitativas: montos de ingresos, egresos y cuotas. Esta tabla es el motor de los cálculos masivos de Power BI.
+                                    El corazón técnico es el **Star Schema**, el modelo más eficiente para el motor xVelocity de Power BI. En el epicentro reside la **Tabla de Hechos (Fact Table)**, que almacena las métricas cuantitativas: montos de ingresos, egresos por nómina y cuotas presupuestales. Esta tabla es puramente numérica y optimizada para cálculos masivos.
                                 </p>
                                 <p class="leading-relaxed text-justify mb-10">
-                                    Rodeando a los hechos, las **Tablas de Dimensiones** actúan como los "ojos analíticos" o filtros de la realidad. Estas dimensiones permiten desglosar un número frío en contextos accionables. Por ejemplo, la Dimensión **Calendario** no es solo una lista de fechas; es una jerarquía que permite viajar desde el Año hasta el Día exacto de un gasto. La Dimensión **Categorías** estandariza el lenguaje corporativo, asegurando que "Nómina" signifique lo mismo para todos. Este esquema minimiza las relaciones complejas y maximiza la velocidad del motor xVelocity.
+                                    Rodeando a los hechos, las **Tablas de Dimensiones** actúan como los "ojos analíticos" o filtros de la realidad financiera. La dimensión **Calendario** permite jerarquías de tiempo (Año, Mes, Día), mientras que la dimensión **Categorías** estandariza la taxonomía de Dinotech. Este esquema minimiza las uniones (joins) complejas, permitiendo que un clic del usuario propague filtros instantáneos hacia los resultados finales.
                                 </p>
                                 
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                                     <div class="p-6 bg-white rounded-2xl shadow-md border-b-4 border-blue-800 transform hover:scale-105 transition">
                                         <i class="fas fa-database text-blue-800 text-3xl mb-4"></i>
-                                        <span class="block font-black text-sm text-blue-900 uppercase">Fact Table</span>
-                                        <span class="text-[10px] text-blue-600 font-bold">Hechos Transaccionales</span>
+                                        <span class="block font-black text-sm text-blue-900 uppercase tracking-tighter">Fact Table</span>
+                                        <span class="text-[10px] text-blue-500 font-bold uppercase">Hechos Reales</span>
                                     </div>
-                                    <div class="p-6 bg-white rounded-2xl shadow-md border-b-4 border-blue-800 transform hover:scale-105 transition">
+                                    <div class="p-6 bg-white rounded-2xl shadow-md border-b-4 border-blue-800 transform hover:scale-105 transition text-justify leading-none">
                                         <i class="fas fa-history text-blue-800 text-3xl mb-4"></i>
-                                        <span class="block font-black text-sm text-blue-900 uppercase">Dim Calendario</span>
-                                        <span class="text-[10px] text-blue-600 font-bold">Eje Temporal Jerárquico</span>
+                                        <span class="block font-black text-sm text-blue-900 uppercase tracking-tighter">Dim Calendario</span>
+                                        <span class="text-[10px] text-blue-500 font-bold uppercase">Eje de Tiempo</span>
                                     </div>
                                     <div class="p-6 bg-white rounded-2xl shadow-md border-b-4 border-blue-800 transform hover:scale-105 transition">
                                         <i class="fas fa-tags text-blue-800 text-3xl mb-4"></i>
-                                        <span class="block font-black text-sm text-blue-900 uppercase">Dim Categorías</span>
-                                        <span class="text-[10px] text-blue-600 font-bold">Taxonomía Financiera</span>
+                                        <span class="block font-black text-sm text-blue-900 uppercase tracking-tighter">Dim Categorías</span>
+                                        <span class="text-[10px] text-blue-500 font-bold uppercase">Atributos</span>
                                     </div>
                                 </div>
                             </div>
@@ -302,8 +302,8 @@
                 <div class="absolute top-10 right-10 opacity-5"><i class="fas fa-brain text-[200px] text-blue-800"></i></div>
                 <div class="max-w-5xl mx-auto blue-text-container">
                     <h3 class="text-4xl font-black mb-12 text-center uppercase tracking-tighter">2.4. Sistemas de Soporte a la Decisión (DSS)</h3>
-                    <p class="text-justify mb-12 text-xl leading-relaxed">
-                        El Dashboard financiero trasciende la mera visualización; es un **Sistema de Soporte a la Decisión (DSS)** diseñado para reducir la carga cognitiva de la gerencia ante problemas complejos de planificación financiera. A diferencia de un reporte estático, un DSS no se limita a mostrar "qué pasó", sino que proporciona el contexto analítico necesario para que el decisor humano determine "qué hacer a continuación" basándose en evidencia sólida:
+                    <p class="text-justify mb-12 text-xl leading-relaxed font-light">
+                        El Dashboard financiero de Dinotech trasciende la mera visualización; es un **Sistema de Soporte a la Decisión (DSS)** diseñado para reducir la carga cognitiva de la gerencia ante problemas complejos de planificación financiera. A diferencia de un reporte estático, un DSS proporciona el contexto analítico necesario para que el decisor humano determine "qué hacer a continuación" basándose en evidencia sólida de negocio:
                     </p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -311,28 +311,28 @@
                             <h4 class="font-black flex items-center gap-3 text-2xl underline decoration-4 underline-offset-8">
                                 <i class="fas fa-project-diagram"></i> Análisis "What-If"
                             </h4>
-                            <p class="text-lg leading-relaxed text-justify">
-                                La arquitectura diseñada permite a los gerentes simular el impacto de decisiones críticas antes de comprometer recursos reales. Mediante el uso de segmentadores y filtros cruzados, el sistema permite responder preguntas como: ¿Qué sucede con mi margen neto si el ingreso real cae un 10% adicional? o ¿Cómo se afecta mi flujo de caja si incremento la inversión en Marketing digital? El sistema recalcula instantáneamente todas las cuotas de rentabilidad proyectadas, eliminando la incertidumbre en la planificación presupuestaria.
+                            <p class="text-lg leading-relaxed text-justify font-normal">
+                                La arquitectura diseñada permite a los gerentes de Dinotech simular el impacto de decisiones críticas antes de comprometer recursos reales. Mediante segmentadores dinámicos, el sistema responde a preguntas como: ¿Qué sucede con mi margen si el ingreso real cae un 10% adicional? o ¿Cómo se afecta mi utilidad si incremento la inversión en Marketing digital? El sistema recalcula instantáneamente todas las cuotas proyectadas, eliminando la incertidumbre en la planificación presupuestaria anual.
                             </p>
                         </div>
                         <div class="space-y-6">
                             <h4 class="font-black flex items-center gap-3 text-2xl underline decoration-4 underline-offset-8">
                                 <i class="fas fa-crosshairs"></i> Identificación de Fugas
                             </h4>
-                            <p class="text-lg leading-relaxed text-justify">
-                                A través de las alertas visuales de semaforización (KPI Gauges), el DSS detecta automáticamente desviaciones fuera de los umbrales de tolerancia definidos. Indica con precisión qué centros de costo están "quemando" presupuesto a un ritmo que supera la capacidad de generación de ingresos del mes actual. Esta visibilidad micro-detallada permite a las jefaturas aplicar cortes de gasto preventivos y reasignar excedentes de manera táctica, garantizando que el cierre fiscal no presente sorpresas negativas.
+                            <p class="text-lg leading-relaxed text-justify font-normal">
+                                A través de las alertas visuales de semaforización (KPI Gauges), el DSS detecta automáticamente desviaciones críticas fuera de los umbrales de tolerancia definidos. Indica con precisión qué centros de costo están "quemando" presupuesto a un ritmo que supera la capacidad de generación de ingresos del mes actual. Esta visibilidad micro-detallada permite a las jefaturas aplicar cortes de gasto preventivos de manera táctica, garantizando la salud financiera de Dinotech.
                             </p>
                         </div>
                     </div>
 
                     <div class="mt-16 p-10 bg-blue-50 rounded-3xl border-2 border-dashed border-blue-200 text-center shadow-inner">
-                        <p class="text-xs font-black uppercase tracking-[0.3em] mb-6">Ciclo de Decisión Basada en Datos</p>
+                        <p class="text-xs font-black uppercase tracking-[0.3em] mb-6">Ciclo de Decisión Dinotech Analytics</p>
                         <div class="flex flex-wrap justify-center gap-8 items-center">
-                            <div class="px-6 py-3 bg-white rounded-xl shadow-md font-bold text-xs border border-blue-100 text-blue-900">Captura</div>
+                            <div class="px-6 py-3 bg-white rounded-xl shadow-md font-bold text-xs border border-blue-100 text-blue-900 uppercase">Captura de Datos</div>
                             <i class="fas fa-chevron-right text-blue-400"></i>
-                            <div class="px-6 py-3 bg-white rounded-xl shadow-md font-bold text-xs border border-blue-100 text-blue-900">Analítica</div>
+                            <div class="px-6 py-3 bg-white rounded-xl shadow-md font-bold text-xs border border-blue-100 text-blue-900 uppercase text-justify leading-none">Analítica Dimensional</div>
                             <i class="fas fa-chevron-right text-blue-400"></i>
-                            <div class="px-6 py-3 bg-blue-800 text-white rounded-xl shadow-md font-bold text-xs uppercase">Decisión</div>
+                            <div class="px-6 py-3 bg-blue-800 text-white rounded-xl shadow-md font-bold text-xs uppercase text-center">Decisión Estratégica</div>
                         </div>
                     </div>
                 </div>
@@ -340,55 +340,46 @@
 
             <!-- ETL Y HERRAMIENTAS -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20 mb-32">
-                <div class="content-card text-justify bg-white">
-                    <h3 class="text-3xl font-bold navy-text mb-8">2.6. Procesos ETL Avanzados</h3>
+                <div class="content-card text-justify bg-white border-b-8 gold-border shadow-lg">
+                    <h3 class="text-3xl font-bold navy-text mb-8">2.6. Procesos ETL (Extracción, Transformación y Carga)</h3>
                     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        El proceso de **Extracción, Transformación y Carga (ETL)** es la línea de producción de la calidad del dato. En este proyecto se utilizó el lenguaje **M** de Power Query para realizar transformaciones profundas que garantizan la veracidad del dashboard final.
+                        El proceso de **ETL** es la "refinería" de los datos financieros. Sin un flujo robusto, el dashboard reportaría información inconsistente (GIGO). Nuestra implementación utiliza Power Query para:
                     </p>
-                    <ul class="space-y-8">
+                    <ul class="space-y-8 text-sm text-slate-500">
                         <li class="flex gap-6">
                             <span class="h-10 w-10 navy-bg text-white rounded-full flex items-center justify-center shrink-0 font-bold shadow-lg">E</span>
-                            <div>
-                                <h4 class="font-bold navy-text text-xl">Extracción Adaptativa</h4>
-                                <p class="text-sm text-slate-500">Conexión a silos de Excel con lógica de detección de rutas relativas, permitiendo que el proyecto funcione en cualquier estación de trabajo sin reconfiguración.</p>
-                            </div>
+                            <div><strong>Extracción Estratégica:</strong> Conexión dinámica a los repositorios de Dinotech, detectando cambios estructurales para evitar la ruptura del flujo de datos en tiempo real.</div>
                         </li>
                         <li class="flex gap-6">
                             <span class="h-10 w-10 navy-bg text-white rounded-full flex items-center justify-center shrink-0 font-bold shadow-lg">T</span>
-                            <div>
-                                <h4 class="font-bold navy-text text-xl">Transformación Semántica</h4>
-                                <p class="text-sm text-slate-500">Conversión de tipos de datos, corrección de desviaciones temporales y des-pivotado de columnas presupuestales para habilitar comparativas inter-mensuales.</p>
-                            </div>
+                            <div><strong>Transformación Semántica:</strong> Normalización de formatos, corrección de fechas, limpieza de nulos y estandarización de categorías para eliminar la ambigüedad analítica.</div>
                         </li>
                         <li class="flex gap-6">
                             <span class="h-10 w-10 navy-bg text-white rounded-full flex items-center justify-center shrink-0 font-bold shadow-lg">L</span>
-                            <div>
-                                <h4 class="font-bold navy-text text-xl">Carga en Memoria</h4>
-                                <p class="text-sm text-slate-500">Carga optimizada en el motor tabular que comprime la información, permitiendo análisis rápidos incluso con años de historia transaccional.</p>
-                            </div>
+                            <div><strong>Carga Optimizada:</strong> Inyección al motor tabular con compresión xVelocity, garantizando que el Dashboard cargue instantáneamente independientemente del volumen de datos.</div>
                         </li>
                     </ul>
                 </div>
-                <div class="content-card bg-white">
-                    <h3 class="text-3xl font-bold navy-text mb-10">2.7. Herramientas Tecnológicas</h3>
-                    <div class="space-y-6">
-                        <p class="text-lg text-slate-600 leading-relaxed text-justify">El ecosistema tecnológico seleccionado garantiza estabilidad corporativa y una curva de aprendizaje reducida para los usuarios actuales:</p>
+                <div class="content-card bg-white border-b-8 gold-border shadow-lg">
+                    <h3 class="text-3xl font-bold navy-text mb-10 uppercase tracking-tighter">2.7. Herramientas Tecnológicas</h3>
+                    <div class="space-y-10">
+                        <p class="text-lg text-slate-600 leading-relaxed text-justify font-light">Se ha seleccionado un ecosistema tecnológico líder para asegurar la estabilidad operativa de Dinotech:</p>
                         <div class="grid grid-cols-2 gap-8 mt-5">
-                            <div class="flex items-center gap-6 p-6 bg-slate-50 rounded-3xl border-2 border-slate-100 shadow-sm hover:border-gold transition">
+                            <div class="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:border-gold transition">
                                 <i class="fas fa-chart-bar text-4xl navy-text"></i>
-                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Interface</div><div class="text-sm font-black navy-text text-center">Power BI</div></div>
+                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center">Interface</div><div class="text-sm font-black navy-text">Power BI</div></div>
                             </div>
-                            <div class="flex items-center gap-6 p-6 bg-slate-50 rounded-3xl border-2 border-slate-100 shadow-sm hover:border-gold transition">
+                            <div class="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:border-gold transition text-justify leading-none">
                                 <i class="fas fa-filter text-4xl gold-text"></i>
-                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center">Motor</div><div class="text-sm font-black navy-text">Power Query</div></div>
+                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center">Engine</div><div class="text-sm font-black navy-text">Power Query</div></div>
                             </div>
-                            <div class="flex items-center gap-6 p-6 bg-slate-50 rounded-3xl border-2 border-slate-100 shadow-sm hover:border-gold transition">
+                            <div class="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:border-gold transition text-justify leading-none">
                                 <i class="fas fa-code text-4xl navy-text"></i>
-                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Lógica</div><div class="text-sm font-black navy-text">DAX Core</div></div>
+                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center">Logic</div><div class="text-sm font-black navy-text">DAX Core</div></div>
                             </div>
-                            <div class="flex items-center gap-6 p-6 bg-slate-50 rounded-3xl border-2 border-slate-100 shadow-sm hover:border-gold transition">
+                            <div class="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:border-gold transition">
                                 <i class="fas fa-file-excel text-4xl gold-text"></i>
-                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Recurso</div><div class="text-sm font-black navy-text">MS Excel</div></div>
+                                <div><div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Source</div><div class="text-sm font-black navy-text text-center">MS Excel</div></div>
                             </div>
                         </div>
                     </div>
@@ -397,22 +388,22 @@
         </div>
     </section>
 
-    <!-- MÓDULO III: IMPLEMENTACIÓN -->
+    <!-- MÓDULO III: IMPLEMENTACIÓN TÉCNICA -->
     <section id="tecnico" class="section-padding max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-4 mb-20">
             <span class="navy-bg text-white px-8 py-2 rounded-full text-sm font-bold uppercase tracking-widest">Implementación</span>
-            <h2 class="text-4xl font-extrabold navy-text uppercase tracking-tight">Arquitectura de Ingeniería DAX</h2>
+            <h2 class="text-4xl font-extrabold navy-text uppercase tracking-tight">Arquitectura de Ingeniería</h2>
             <div class="h-px bg-slate-200 flex-grow"></div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32 items-center">
-            <div class="space-y-12 text-justify">
-                <h3 class="text-3xl font-bold navy-text">Resolución de Desafíos de Contexto</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 items-center text-justify">
+            <div class="space-y-12">
+                <h3 class="text-3xl font-bold navy-text border-b gold-border pb-4">Resolución de Desafíos DAX</h3>
                 <p class="text-slate-600 leading-relaxed text-xl font-light">
-                    Un reto técnico fundamental fue la "Desaparición de Categorías Silenciosas". Al filtrar por gastos reales, el presupuesto de categorías sin gasto se ocultaba, impidiendo visualizar oportunidades de ahorro. La solución fue la reconfiguración del contexto de filtro mediante **DAX Avanzado**, permitiendo que el presupuesto total actúe como una constante mensual inalterable:
+                    Un reto fundamental fue la invisibilidad de categorías sin gasto. Mediante **DAX Avanzado**, se reconfiguró el motor para que el presupuesto actúe como una constante íntegra, permitiendo visualizar brechas de ahorro críticas independientemente del flujo real:
                 </p>
                 <div class="p-12 bg-slate-900 rounded-[3rem] text-white shadow-2xl relative border-l-[12px] gold-border">
-                    <span class="absolute top-8 right-10 text-gold text-xs font-mono font-bold tracking-widest uppercase opacity-40">Logic Block</span>
+                    <span class="absolute top-8 right-10 text-gold text-xs font-mono font-bold tracking-widest uppercase opacity-40">DAX Engine Solution</span>
                     <code class="text-base block leading-relaxed text-gold font-mono mb-8">
                         Cuota Gastos = <br>
                         DIVIDE(<br>
@@ -429,25 +420,25 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="content-card bg-white border-none shadow-xl text-center hover:scale-105 transition">
+                <div class="content-card text-center hover:scale-105 transition-all shadow-xl bg-white border-none">
                     <i class="fas fa-calendar-alt text-5xl mb-6 gold-text"></i>
-                    <h4 class="font-bold navy-text text-xl mb-4">Orden Temporal</h4>
-                    <p class="text-sm text-slate-500">ID numérico (Año*100 + Mes) para secuencia cronológica correcta.</p>
+                    <h4 class="font-bold navy-text text-xl mb-4 uppercase tracking-tighter">Orden Temporal</h4>
+                    <p class="text-sm text-slate-500 font-normal text-justify leading-none">Normalización de secuencia cronológica mediante ID numérico (Año*100 + Mes) para corregir el orden alfabético nativo de Power BI.</p>
                 </div>
-                <div class="content-card bg-white border-none shadow-xl text-center hover:scale-105 transition">
+                <div class="content-card text-center hover:scale-105 transition-all shadow-xl bg-white border-none">
                     <i class="fas fa-sync text-5xl mb-6 gold-text"></i>
-                    <h4 class="font-bold navy-text text-xl mb-4">Auto-Refresh</h4>
-                    <p class="text-sm text-slate-500">Eliminación de años estáticos en Power Query para soporte 2024+.</p>
+                    <h4 class="font-bold navy-text text-xl mb-4 uppercase tracking-tighter text-justify leading-none">Auto-Refresh</h4>
+                    <p class="text-sm text-slate-500 font-normal text-justify leading-none">Eliminación de años estáticos en Power Query para soportar automáticamente el cierre de 2024 y apertura de 2025 sin intervención manual.</p>
                 </div>
-                <div class="content-card bg-white border-none shadow-xl text-center hover:scale-105 transition">
+                <div class="content-card text-center hover:scale-105 transition-all shadow-xl bg-white border-none">
                     <i class="fas fa-lock text-5xl mb-6 gold-text"></i>
-                    <h4 class="font-bold navy-text text-xl mb-4">Integridad del Dato</h4>
-                    <p class="text-sm text-slate-500">Relación de cardinalidad única para evitar duplicidades en ingresos.</p>
+                    <h4 class="font-bold navy-text text-xl mb-4 uppercase tracking-tighter text-justify leading-none">Integridad</h4>
+                    <p class="text-sm text-slate-500 font-normal text-justify leading-none">Validación de cardinalidad 1:* para evitar duplicidades accidentales en la suma de nóminas de Dinotech bajo modelos de filtrado cruzado.</p>
                 </div>
-                <div class="content-card bg-white border-none shadow-xl text-center hover:scale-105 transition">
+                <div class="content-card text-center hover:scale-105 transition-all shadow-xl bg-white border-none">
                     <i class="fas fa-chart-area text-5xl mb-6 gold-text"></i>
-                    <h4 class="font-bold navy-text text-xl mb-4">Análisis de Gaps</h4>
-                    <p class="text-sm text-slate-500">Métricas integradas de varianza presupuestal por categoría.</p>
+                    <h4 class="font-bold navy-text text-xl mb-4 uppercase tracking-tighter text-justify leading-none">Análisis Gaps</h4>
+                    <p class="text-sm text-slate-500 font-normal text-justify leading-none">Métricas de varianza presupuestal automática por cada centro de costo, permitiendo identificar fugas de capital de forma semanal.</p>
                 </div>
             </div>
         </div>
@@ -456,31 +447,31 @@
     <!-- RESULTADOS FINALES -->
     <section id="resultados" class="section-padding bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col mb-24 text-center md:text-left">
-                <span class="navy-bg text-white w-fit px-8 py-2 rounded-full text-sm font-bold uppercase mb-4 tracking-widest mx-auto md:mx-0">Análisis</span>
+            <div class="flex flex-col mb-24">
+                <span class="navy-bg text-white w-fit px-8 py-2 rounded-full text-sm font-bold uppercase mb-4 tracking-widest">Análisis</span>
                 <h2 class="chapter-title navy-text uppercase tracking-tight">Resultados Operativos 2024</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
                 <div class="content-card text-center border-t-8 gold-border shadow-2xl">
-                    <div class="text-9xl font-black navy-text mb-6">66%</div>
+                    <div class="text-8xl font-black navy-text mb-6">66%</div>
                     <div class="uppercase tracking-[0.3em] text-sm font-black gold-text mb-8">Ingresos Meta</div>
                     <p class="text-base text-slate-600 leading-relaxed text-justify font-light">
-                        A pesar de un avance del 66%, el análisis revela una desaceleración estacional. La meta anual está en riesgo a menos que el Q4 logre un repunte del 15% por encima de la media histórica.
+                        A pesar de un avance del 66%, el análisis revela una desaceleración estacional. La meta anual está en riesgo a menos que el Q4 logre un repunte del 15% por encima de la media histórica del trimestre anterior.
                     </p>
                 </div>
                 <div class="content-card text-center border-t-8 border-red-600 shadow-2xl">
-                    <div class="text-8xl font-black text-red-600 mb-6">96.5%</div>
+                    <div class="text-9xl font-black text-red-600 mb-6">96.5%</div>
                     <div class="uppercase tracking-[0.3em] text-sm font-black text-red-400 mb-8">Consumo Presupuestal</div>
                     <p class="text-base text-slate-600 leading-relaxed text-justify font-light">
-                        <strong>Hallazgo Crítico:</strong> El presupuesto operativo ha sido ejecutado casi en su totalidad. No existe colchón financiero para gastos imprevistos en el último trimestre.
+                        <strong>Hallazgo Crítico:</strong> El presupuesto operativo ha sido ejecutado casi en su totalidad. No existe colchón financiero para gastos imprevistos en el último trimestre, exigiendo austeridad inmediata.
                     </p>
                 </div>
                 <div class="content-card text-center border-t-8 gold-border shadow-2xl">
-                    <div class="text-9xl font-black navy-text mb-6">36%</div>
+                    <div class="text-8xl font-black navy-text mb-6">36%</div>
                     <div class="uppercase tracking-[0.3em] text-sm font-black gold-text mb-8">Utilidad Alcanzada</div>
                     <p class="text-base text-slate-600 leading-relaxed text-justify font-light">
-                        La utilidad actual (S/ 528.00) representa solo una fracción del potencial. La brecha del -61% es el resultado de un gasto elevado no compensado por el volumen de ventas.
+                        La rentabilidad real de S/ 528.00 representa solo una fracción del potencial proyectado. La brecha del -61% es el resultado directo de un gasto elevado no compensado por el volumen de ventas actuales.
                     </p>
                 </div>
             </div>
@@ -489,8 +480,8 @@
             <div class="relative group mt-20">
                 <div class="absolute -inset-2 bg-gradient-to-r from-navy-bg via-gold to-navy-bg rounded-[4rem] blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
                 <div class="relative bg-white rounded-[3.5rem] min-h-[800px] flex items-center justify-center text-center p-4 border-4 border-dashed border-slate-300 overflow-hidden shadow-2xl">
-                    <!-- RUTA RELATIVA: Evidencia.png -->
-                    <img src="Evidencia.png" 
+                    <!-- RUTA RELATIVA PARA GITHUB: Evidencia.png -->
+                    <img src="./Evidencia.png" 
                          alt="Dashboard de Evidencia Financiera Corporativa" 
                          class="max-w-full max-h-full object-contain rounded-3xl shadow-2xl"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -500,7 +491,7 @@
                         <i class="fas fa-desktop text-[160px] mb-12 text-slate-400 opacity-20"></i>
                         <h3 class="text-5xl font-black text-slate-500 mb-8 tracking-tighter uppercase text-center">Visualización del DSS</h3>
                         <p class="text-slate-400 max-w-2xl mx-auto italic text-2xl leading-relaxed font-light text-center">
-                            "Asegúrese de que el archivo 'Evidencia.png' esté en la misma carpeta que este reporte para visualizar la captura del Dashboard."
+                            "Error de carga: Asegúrese de que el archivo 'Evidencia.png' esté en la misma carpeta que este reporte y respete mayúsculas/minúsculas para GitHub."
                         </p>
                     </div>
                 </div>
@@ -514,10 +505,14 @@
             <h2 class="text-5xl font-extralight italic mb-24 opacity-80 leading-tight">"La Inteligencia de Negocios es la brújula estratégica que permite transformar la incertidumbre en rentabilidad controlada."</h2>
             <div class="h-1 w-40 gold-bg mx-auto mb-24"></div>
             
-
-            
             <div class="pt-24 border-t border-white/5 flex flex-col items-center">
-                <p class="text-[12px] uppercase tracking-[0.8em] opacity-40 font-bold">FACULTAD DE MINAS, GEOLOGÍA Y CIVIL</p>
+                <p class="text-[12px] uppercase tracking-[0.8em] opacity-40 font-bold tracking-widest">Facultad de Minas, Geología y Civil</p>
+                <div class="mt-10 flex justify-center gap-10 text-2xl opacity-20">
+                    <i class="fas fa-server"></i>
+                    <i class="fas fa-microchip"></i>
+                    <i class="fas fa-chart-area"></i>
+                    <i class="fas fa-network-wired"></i>
+                </div>
             </div>
         </div>
     </footer>
